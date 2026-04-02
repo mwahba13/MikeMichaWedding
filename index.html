@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Michaella & Michael — May 29, 2027</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav id="nav">
+    <div class="nav-inner">
+      <span class="nav-monogram">M & M</span>
+      <ul class="nav-links">
+        <li><a href="#story">Our Story</a></li>
+        <li><a href="#details">Details</a></li>
+        <li><a href="#schedule">Schedule</a></li>
+        <li><a href="#venue">Venue</a></li>
+        <li><a href="#rsvp">RSVP</a></li>
+      </ul>
+      <button class="nav-toggle" aria-label="Open menu">&#9776;</button>
+    </div>
+  </nav>
+
+  <!-- MOBILE MENU -->
+  <div id="mobile-menu" class="mobile-menu">
+    <button class="mobile-close" aria-label="Close menu">&#10005;</button>
+    <ul>
+      <li><a href="#story">Our Story</a></li>
+      <li><a href="#details">Details</a></li>
+      <li><a href="#schedule">Schedule</a></li>
+      <li><a href="#venue">Venue</a></li>
+      <li><a href="#rsvp">RSVP</a></li>
+    </ul>
+  </div>
+
+  <!-- HERO -->
+  <section id="hero">
+    <div class="hero-bg">
+      <!-- Replace with: <img src="images/hero.jpg" alt="Michaella and Michael" /> -->
+      <div class="hero-placeholder">
+        <div class="hero-placeholder-inner">
+          <span>📸</span>
+          <p>Hero photo — replace with your favourite couple photo</p>
+        </div>
+      </div>
+    </div>
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <p class="hero-eyebrow">We're getting married</p>
+      <h1 class="hero-names">Michaella<br /><span class="amp">&</span><br />Michael</h1>
+      <p class="hero-date">May 29, 2027 · Calgary, Alberta</p>
+      <div class="hero-divider">
+        <span></span><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14H9V8h2v8zm4 0h-2V8h2v8z" fill="currentColor"/></svg><span></span>
+      </div>
+      <a href="#details" class="btn-outline">View Details</a>
+    </div>
+    <div class="hero-scroll">
+      <span>Scroll</span>
+      <div class="scroll-line"></div>
+    </div>
+  </section>
+
+  <!-- COUNTDOWN -->
+  <section id="countdown">
+    <div class="countdown-inner">
+      <p class="countdown-label">Until we say <em>I do</em></p>
+      <div class="countdown-grid">
+        <div class="count-item"><span id="cd-days">—</span><label>Days</label></div>
+        <div class="count-sep">:</div>
+        <div class="count-item"><span id="cd-hours">—</span><label>Hours</label></div>
+        <div class="count-sep">:</div>
+        <div class="count-item"><span id="cd-mins">—</span><label>Minutes</label></div>
+        <div class="count-sep">:</div>
+        <div class="count-item"><span id="cd-secs">—</span><label>Seconds</label></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- OUR STORY -->
+  <section id="story">
+    <div class="section-inner story-inner">
+      <div class="story-image">
+        <!-- Replace with: <img src="images/story.jpg" alt="Michaella and Michael together" /> -->
+        <div class="img-placeholder">
+          <span>📸</span>
+          <p>A favourite photo of you two</p>
+        </div>
+      </div>
+      <div class="story-text">
+        <p class="eyebrow">Our Story</p>
+        <h2>A love worth celebrating</h2>
+        <p>Every great love story has a beginning — a moment when two people find each other and the world makes a little more sense. Ours is no different, though to us, it feels extraordinary.</p>
+        <p>After years of shared adventures, laughter, and a whole lot of life, we decided it was time to make it official. We can't wait to celebrate with the people who matter most to us.</p>
+        <p class="story-sig">— Michaella & Michael</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- DETAILS -->
+  <section id="details">
+    <div class="section-inner">
+      <p class="eyebrow center">Event Details</p>
+      <h2 class="center">Save the Date</h2>
+      <div class="details-grid">
+        <div class="detail-card">
+          <div class="detail-icon">⛪</div>
+          <h3>Ceremony</h3>
+          <p class="detail-where">Church Ceremony</p>
+          <p>Saturday, May 29, 2027</p>
+          <p>2:00 PM</p>
+          <p class="detail-note">Location details to follow</p>
+        </div>
+        <div class="detail-card featured">
+          <div class="detail-icon">🦒</div>
+          <h3>Reception</h3>
+          <p class="detail-where">Enmax Conservatory<br />Calgary Zoo</p>
+          <p>Saturday, May 29, 2027</p>
+          <p>5:00 PM – Late</p>
+          <p class="detail-note">1300 Zoo Rd NE, Calgary, AB</p>
+        </div>
+        <div class="detail-card">
+          <div class="detail-icon">👔</div>
+          <h3>Dress Code</h3>
+          <p class="detail-where">Formal Attire</p>
+          <p>Black tie optional</p>
+          <p>Colours: Navy &amp; Blush</p>
+          <p class="detail-note">Comfortable shoes recommended — it's a zoo!</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SCHEDULE -->
+  <section id="schedule">
+    <div class="section-inner">
+      <p class="eyebrow center">The Day</p>
+      <h2 class="center">Day-of Schedule</h2>
+      <div class="timeline">
+        <div class="tl-item">
+          <div class="tl-time">2:00 PM</div>
+          <div class="tl-dot"></div>
+          <div class="tl-content">
+            <h4>Ceremony</h4>
+            <p>Church ceremony — please be seated by 1:45 PM</p>
+          </div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-time">3:30 PM</div>
+          <div class="tl-dot"></div>
+          <div class="tl-content">
+            <h4>Cocktail Hour</h4>
+            <p>Drinks &amp; light bites at the Enmax Conservatory, Calgary Zoo</p>
+          </div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-time">5:00 PM</div>
+          <div class="tl-dot"></div>
+          <div class="tl-content">
+            <h4>Reception Opens</h4>
+            <p>Guests invited into the reception space</p>
+          </div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-time">5:30 PM</div>
+          <div class="tl-dot"></div>
+          <div class="tl-content">
+            <h4>Dinner</h4>
+            <p>Welcome speeches, dinner service, and toasts</p>
+          </div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-time">7:30 PM</div>
+          <div class="tl-dot"></div>
+          <div class="tl-content">
+            <h4>First Dance & Cake</h4>
+            <p>First dance, parent dances, and cake cutting</p>
+          </div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-time">8:00 PM</div>
+          <div class="tl-dot"></div>
+          <div class="tl-content">
+            <h4>Dancing</h4>
+            <p>Open dancing — DJ takes over. Photo booth opens!</p>
+          </div>
+        </div>
+        <div class="tl-item last">
+          <div class="tl-time">11:00 PM</div>
+          <div class="tl-dot"></div>
+          <div class="tl-content">
+            <h4>Last Song</h4>
+            <p>Evening concludes — carriages at midnight</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- VENUE -->
+  <section id="venue">
+    <div class="venue-split">
+      <div class="venue-image">
+        <!-- Replace with: <img src="images/venue.jpg" alt="Enmax Conservatory at Calgary Zoo" /> -->
+        <div class="img-placeholder dark">
+          <span>📸</span>
+          <p>Photo of the Enmax Conservatory at Calgary Zoo</p>
+        </div>
+      </div>
+      <div class="venue-text">
+        <p class="eyebrow">The Venue</p>
+        <h2>Enmax Conservatory<br />Calgary Zoo</h2>
+        <p>Nestled within the Wilder Institute's Calgary Zoo, the Enmax Conservatory is a stunning glass-encased space surrounded by lush tropical gardens. It offers a magical backdrop that brings the wild beauty of nature indoors.</p>
+        <p>Guests will enjoy the unique atmosphere of the zoo after hours — a one-of-a-kind evening among the animals and exotic plants.</p>
+        <div class="venue-details">
+          <div class="venue-detail-row">
+            <span class="vdr-icon">📍</span>
+            <span>1300 Zoo Rd NE, Calgary, AB T2E 7V6</span>
+          </div>
+          <div class="venue-detail-row">
+            <span class="vdr-icon">🚗</span>
+            <span>Parking available on site. Zoo Rd NE off Memorial Dr E.</span>
+          </div>
+          <div class="venue-detail-row">
+            <span class="vdr-icon">🚇</span>
+            <span>Nearest CTrain: Zoo / Bridgeland Station (Blue Line)</span>
+          </div>
+        </div>
+        <a href="https://maps.google.com/?q=Calgary+Zoo+1300+Zoo+Rd+NE+Calgary" target="_blank" rel="noopener" class="btn-primary">Get Directions</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALLERY STRIP -->
+  <section id="gallery">
+    <div class="gallery-strip">
+      <!-- Replace each div with <img src="images/gallery-N.jpg" alt="..." /> -->
+      <div class="gallery-item"><div class="img-placeholder"><span>📸</span><p>Gallery photo</p></div></div>
+      <div class="gallery-item"><div class="img-placeholder"><span>📸</span><p>Gallery photo</p></div></div>
+      <div class="gallery-item"><div class="img-placeholder"><span>📸</span><p>Gallery photo</p></div></div>
+      <div class="gallery-item"><div class="img-placeholder"><span>📸</span><p>Gallery photo</p></div></div>
+    </div>
+  </section>
+
+  <!-- TRAVEL & STAY -->
+  <section id="travel">
+    <div class="section-inner">
+      <p class="eyebrow center">For Our Out-of-Town Guests</p>
+      <h2 class="center">Travel & Accommodation</h2>
+      <div class="travel-grid">
+        <div class="travel-card">
+          <div class="travel-icon">✈️</div>
+          <h3>Getting Here</h3>
+          <p>Calgary International Airport (YYC) is approximately 20 minutes from the venue by car or rideshare. Direct flights are available from most major Canadian cities.</p>
+        </div>
+        <div class="travel-card">
+          <div class="travel-icon">🏨</div>
+          <h3>Where to Stay</h3>
+          <p>Several hotels are conveniently located near the Calgary Zoo and downtown Calgary. We recommend booking early as May is a popular time to visit.</p>
+          <ul class="hotel-list">
+            <li>Hotel Arts, Calgary</li>
+            <li>Marriott Downtown</li>
+            <li>Hampton Inn Calgary University NW</li>
+          </ul>
+        </div>
+        <div class="travel-card">
+          <div class="travel-icon">🌿</div>
+          <h3>Explore Calgary</h3>
+          <p>Late May is a beautiful time in Calgary. Consider exploring Prince's Island Park, the Bow River pathway, or the vibrant 17th Avenue district during your stay.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- RSVP -->
+  <section id="rsvp">
+    <div class="rsvp-inner">
+      <p class="eyebrow center light">Join Us</p>
+      <h2 class="center light">RSVP</h2>
+      <p class="rsvp-sub">Kindly reply by <strong>March 29, 2027</strong></p>
+      <div class="rsvp-form-wrap">
+        <form id="rsvp-form" novalidate>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="fname">First Name</label>
+              <input type="text" id="fname" name="fname" placeholder="Michaella" required />
+            </div>
+            <div class="form-group">
+              <label for="lname">Last Name</label>
+              <input type="text" id="lname" name="lname" placeholder="Atienza" required />
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="email">Email Address</label>
+            <input type="email" id="email" name="email" placeholder="you@example.com" required />
+          </div>
+          <div class="form-group">
+            <label for="guests">Number of Guests (including yourself)</label>
+            <select id="guests" name="guests">
+              <option value="1">1 guest</option>
+              <option value="2" selected>2 guests</option>
+              <option value="3">3 guests</option>
+              <option value="4">4 guests</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Attending?</label>
+            <div class="radio-row">
+              <label class="radio-opt"><input type="radio" name="attending" value="yes" checked /> Joyfully accepts</label>
+              <label class="radio-opt"><input type="radio" name="attending" value="no" /> Regretfully declines</label>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="dietary">Dietary Requirements or Notes</label>
+            <textarea id="dietary" name="dietary" rows="3" placeholder="Allergies, dietary restrictions, or anything we should know…"></textarea>
+          </div>
+          <button type="submit" class="btn-submit">Send RSVP</button>
+          <p class="rsvp-note">Your RSVP will be sent directly to Michaella &amp; Michael.</p>
+        </form>
+        <div id="rsvp-success" class="rsvp-success hidden">
+          <div class="success-icon">🌿</div>
+          <h3>Thank you!</h3>
+          <p>We've received your RSVP and can't wait to celebrate with you.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer id="footer">
+    <div class="footer-inner">
+      <p class="footer-names">Michaella &amp; Michael</p>
+      <p class="footer-date">May 29, 2027 · Calgary Zoo · Calgary, Alberta</p>
+      <p class="footer-love">Made with love ♡</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
