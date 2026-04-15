@@ -15,9 +15,9 @@
   --blush-deep:#d4a899;
   --cream:     #faf6f1;
   --cream-dark:#f0e9e0;
-  --gold:      #b8976a;
+  --gold:      #8B6335;
   --text:      #2c2c2c;
-  --text-light:#6b6b6b;
+  --text-light:#4a4a4a;
   --white:     #ffffff;
 
   --font-display: 'Cormorant Garamond', Georgia, serif;
@@ -33,7 +33,7 @@ html { scroll-behavior: smooth; }
 
 body {
   font-family: var(--font-body);
-  font-weight: 300;
+  font-weight: 400;
   color: var(--text);
   background: var(--cream);
   line-height: 1.7;
@@ -54,7 +54,7 @@ p:last-child { margin-bottom: 0; }
 
 .eyebrow {
   font-family: var(--font-body);
-  font-size: 0.7rem;
+  font-size: 0.75rem;
   font-weight: 500;
   letter-spacing: 0.2em;
   text-transform: uppercase;
@@ -281,7 +281,7 @@ p:last-child { margin-bottom: 0; }
 }
 .count-item label {
   display: block; font-size: 0.6rem; letter-spacing: 0.2em;
-  text-transform: uppercase; color: rgba(255,255,255,0.4);
+  text-transform: uppercase; color: rgba(255,255,255,0.65);
   margin-top: 6px;
 }
 .count-sep {
@@ -309,7 +309,7 @@ p:last-child { margin-bottom: 0; }
 }
 .story-text { padding-left: 20px; }
 .story-text h2 { margin-bottom: 20px; }
-.story-text p { color: var(--text-light); font-size: 1rem; }
+.story-text p { color: var(--text); font-size: 1rem; }
 .story-sig {
   font-family: var(--font-display);
   font-size: 1.3rem; font-style: italic;
@@ -335,13 +335,13 @@ p:last-child { margin-bottom: 0; }
   border-top-color: var(--blush);
 }
 .detail-card.featured h3 { color: var(--white); }
-.detail-card.featured p { color: rgba(255,255,255,0.75); }
+.detail-card.featured p { color: rgba(255,255,255,0.9); }
 .detail-card.featured .detail-where { color: var(--blush); }
-.detail-card.featured .detail-note { color: rgba(255,255,255,0.4); }
+.detail-card.featured .detail-note { color: rgba(255,255,255,0.65); }
 .detail-icon { font-size: 2rem; margin-bottom: 16px; }
 .detail-where { font-family: var(--font-display); font-size: 1.1rem; color: var(--navy); margin-bottom: 12px; line-height: 1.3; }
-.detail-card p { font-size: 0.9rem; color: var(--text-light); margin-bottom: 4px; }
-.detail-note { font-size: 0.78rem !important; color: var(--text-light); margin-top: 12px; font-style: italic; }
+.detail-card p { font-size: 0.9rem; color: var(--text); margin-bottom: 4px; }
+.detail-note { font-size: 0.82rem !important; color: var(--text); margin-top: 12px; font-style: italic; }
 
 /* ── SCHEDULE / TIMELINE ──────────────────────────────────── */
 #schedule { background: var(--cream); }
@@ -373,7 +373,7 @@ p:last-child { margin-bottom: 0; }
 }
 .tl-content { padding-bottom: 8px; }
 .tl-content h4 { font-size: 1.05rem; }
-.tl-content p { font-size: 0.88rem; color: var(--text-light); }
+.tl-content p { font-size: 0.88rem; color: var(--text); }
 
 /* ── VENUE ────────────────────────────────────────────────── */
 #venue { background: var(--cream-dark); }
@@ -386,11 +386,11 @@ p:last-child { margin-bottom: 0; }
 }
 .venue-text .eyebrow { color: var(--blush-deep); }
 .venue-text h2 { color: var(--white); margin-bottom: 20px; font-size: clamp(1.6rem, 3vw, 2.4rem); }
-.venue-text p { color: rgba(255,255,255,0.7); font-size: 0.95rem; }
+.venue-text p { color: rgba(255,255,255,0.88); font-size: 0.95rem; }
 .venue-details { margin: 28px 0; display: flex; flex-direction: column; gap: 12px; }
 .venue-detail-row { display: flex; gap: 12px; align-items: flex-start; }
 .vdr-icon { flex-shrink: 0; font-size: 1rem; margin-top: 2px; }
-.venue-detail-row span:last-child { font-size: 0.85rem; color: rgba(255,255,255,0.6); }
+.venue-detail-row span:last-child { font-size: 0.85rem; color: rgba(255,255,255,0.82); }
 
 /* ── GALLERY STRIP ────────────────────────────────────────── */
 #gallery { background: var(--navy-deep); }
@@ -407,13 +407,13 @@ p:last-child { margin-bottom: 0; }
 .travel-card { padding: 36px 28px; background: var(--white); }
 .travel-icon { font-size: 1.8rem; margin-bottom: 14px; }
 .travel-card h3 { font-size: 1.2rem; margin-bottom: 10px; }
-.travel-card p { font-size: 0.88rem; color: var(--text-light); }
+.travel-card p { font-size: 0.88rem; color: var(--text); }
 .hotel-list { margin-top: 10px; display: flex; flex-direction: column; gap: 4px; }
 .hotel-list li {
   font-size: 0.83rem; color: var(--gold);
   padding-left: 14px; position: relative;
 }
-.hotel-list li::before { content: '—'; position: absolute; left: 0; color: var(--blush-deep); }
+.hotel-list li::before { content: '—'; position: absolute; left: 0; color: rgba(26,39,68,0.45); }
 
 /* ── RSVP ─────────────────────────────────────────────────── */
 #rsvp { background: var(--navy-deep); padding: var(--section-pad); }
@@ -468,8 +468,8 @@ p:last-child { margin-bottom: 0; }
   font-size: 1.6rem; font-weight: 300; font-style: italic;
   color: var(--white); margin-bottom: 6px;
 }
-.footer-date { font-size: 0.75rem; letter-spacing: 0.15em; text-transform: uppercase; color: rgba(255,255,255,0.35); margin-bottom: 20px; }
-.footer-love { font-size: 0.75rem; color: var(--blush); opacity: 0.6; }
+.footer-date { font-size: 0.75rem; letter-spacing: 0.15em; text-transform: uppercase; color: rgba(255,255,255,0.6); margin-bottom: 20px; }
+.footer-love { font-size: 0.75rem; color: var(--blush); }
 
 /* ── TIMELINE TAG ─────────────────────────────────────────── */
 .tl-tag {
@@ -479,7 +479,7 @@ p:last-child { margin-bottom: 0; }
   letter-spacing: 0.12em;
   text-transform: uppercase;
   color: var(--gold);
-  border: 1px solid var(--blush-deep);
+  border: 1px solid rgba(139,99,53,0.35);
   padding: 2px 7px;
   margin-bottom: 5px;
   border-radius: 2px;
@@ -488,8 +488,8 @@ p:last-child { margin-bottom: 0; }
 /* ── DETAILS NOTICE ───────────────────────────────────────── */
 .details-notice {
   text-align: center;
-  font-size: 0.82rem;
-  color: var(--text-light);
+  font-size: 0.88rem;
+  color: var(--text);
   font-style: italic;
   margin-top: 36px;
   padding-top: 28px;
