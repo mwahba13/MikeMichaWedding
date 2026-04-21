@@ -14,7 +14,7 @@ body {
   min-height:100vh; display:flex; flex-direction:column; align-items:center; padding:2rem 1rem 3rem;
 }
 #puzzle-screen { gap:0.6rem; padding-top:1rem; }
-.screen { width:100%; max-width:560px; display:none; flex-direction:column; align-items:center; gap:1.5rem; }
+.screen { width:100%; max-width:680px; display:none; flex-direction:column; align-items:center; gap:1.5rem; }
 .screen.active { display:flex; animation:fadeUp .7s ease forwards; }
 @keyframes fadeUp { from{opacity:0;transform:translateY(12px)} to{opacity:1;transform:translateY(0)} }
 
@@ -34,7 +34,7 @@ body {
 .puzzle-title { font-family:'Playfair Display',serif; font-size:clamp(20px,5vw,26px); font-weight:400; font-style:italic; color:var(--ivory); }
 .puzzle-hint { font-size:13px; color:rgba(196,184,168,.6); margin-top:3px; }
 
-.progress-wrap { width:100%; max-width:460px; display:flex; align-items:center; gap:12px; margin:0; }
+.progress-wrap { width:100%; max-width:620px; display:flex; align-items:center; gap:12px; margin:0; }
 .progress-track { flex:1; height:4px; background:rgba(232,180,184,.2); border-radius:3px; overflow:hidden; }
 .progress-fill { height:100%; width:0%; background:var(--blush); border-radius:3px; transition:width .4s cubic-bezier(.34,1.56,.64,1); }
 .progress-count { font-size:13px; color:var(--blush-light); opacity:.75; min-width:42px; text-align:right; font-family:'Playfair Display',serif; font-style:italic; }
@@ -52,23 +52,23 @@ body {
 .grid-h { width:100%; height:1px; left:0; }
 .grid-v { height:100%; width:1px; top:0; }
 
-.piece { position:absolute; cursor:grab; touch-action:none; z-index:10; filter:drop-shadow(0 3px 8px rgba(0,0,0,.55)); transition:filter .12s; }
-.piece.dragging { cursor:grabbing; z-index:500; filter:drop-shadow(0 10px 22px rgba(0,0,0,.8)) drop-shadow(0 0 6px rgba(201,168,76,.6)); }
-.piece.snapped { cursor:grab; filter:drop-shadow(0 0 6px rgba(232,180,184,.9)) drop-shadow(0 0 2px rgba(201,168,76,.5)); z-index:5; }
+.piece { position:absolute; cursor:grab; touch-action:none; z-index:10; filter:drop-shadow(0 3px 8px rgba(0,0,0,.55)); transition:filter .12s, transform .1s; }
+.piece.dragging { cursor:grabbing; z-index:500; filter:drop-shadow(0 14px 28px rgba(0,0,0,.85)) drop-shadow(0 0 8px rgba(201,168,76,.7)); transform:scale(1.07); transition:transform .08s ease, filter .08s; }
+.piece.snapped { cursor:default; filter:drop-shadow(0 0 6px rgba(232,180,184,.9)) drop-shadow(0 0 2px rgba(201,168,76,.5)); z-index:5; }
 .piece canvas { display:block; }
 .in-tray { transform-origin: top left; }
 
-#tray-wrap { width:100%; max-width:460px; margin-top:0; }
+#tray-wrap { width:100%; max-width:620px; margin-top:0; }
 .tray-label { font-size:12px; color:rgba(196,184,168,.45); font-style:italic; margin-bottom:6px; text-align:center; font-family:'Playfair Display',serif; }
-#tray { background:rgba(15,20,40,.6); border:1px solid rgba(232,180,184,.15); border-radius:4px; padding:10px; display:flex; flex-wrap:wrap; gap:6px; justify-content:center; align-items:center; }
+#tray { background:rgba(15,20,40,.6); border:1px solid rgba(232,180,184,.15); border-radius:4px; padding:14px 12px; display:flex; flex-wrap:wrap; gap:8px; justify-content:center; align-items:center; }
 
 /* WIN */
 .win-eyebrow { font-family:'Playfair Display',serif; font-size:16px; font-style:italic; letter-spacing:4px; color:var(--blush-light); text-transform:uppercase; text-align:center; opacity:.9; }
-.ornament { display:flex; align-items:center; gap:12px; color:rgba(232,180,184,.5); width:100%; max-width:460px; justify-content:center; font-size:16px; }
+.ornament { display:flex; align-items:center; gap:12px; color:rgba(232,180,184,.5); width:100%; max-width:620px; justify-content:center; font-size:16px; }
 .ornament-line { flex:1; height:1px; background:rgba(232,180,184,.2); }
 #ticket-canvas { width:100%; height:auto; display:block; border-radius:8px; box-shadow:0 20px 60px rgba(0,0,0,.7),0 0 0 1px rgba(201,168,76,.35); }
 
-#countdown { width:100%; max-width:460px; text-align:center; }
+#countdown { width:100%; max-width:620px; text-align:center; }
 .countdown-label { font-family:'Playfair Display',serif; font-size:15px; font-style:italic; color:rgba(196,184,168,.65); letter-spacing:2px; text-transform:uppercase; margin-bottom:16px; }
 .countdown-grid { display:flex; justify-content:center; gap:10px; }
 .countdown-unit { display:flex; flex-direction:column; align-items:center; gap:6px; }
@@ -86,7 +86,7 @@ body {
 /* ── DETAILS SECTION ── */
 #details-section {
   width:100%;
-  max-width:520px;
+  max-width:620px;
   display:flex;
   flex-direction:column;
   align-items:center;
@@ -234,8 +234,10 @@ body {
 }
 .confetti { position:fixed; pointer-events:none; z-index:9999; animation:cfFall linear forwards; }
 @keyframes cfFall { 0%{transform:translateY(-20px) rotate(0deg);opacity:1} 85%{opacity:1} 100%{transform:translateY(110vh) rotate(900deg);opacity:0} }
-@keyframes snapBounce { 0%{transform:scale(1.12)} 55%{transform:scale(.95)} 100%{transform:scale(1)} }
-.snap-bounce { animation:snapBounce .3s ease forwards; }
+@keyframes snapBounce { 0%{transform:scale(1.18)} 45%{transform:scale(0.92)} 70%{transform:scale(1.05)} 100%{transform:scale(1)} }
+.snap-bounce { animation:snapBounce .38s cubic-bezier(.36,1.56,.64,1) forwards; }
+.slot-ghost { position:absolute; border:1px dashed rgba(232,180,184,.18); border-radius:2px; pointer-events:none; z-index:1; transition:opacity .3s; }
+.slot-ghost.filled { opacity:0; }
 </style>
 </head>
 <body>
@@ -378,11 +380,29 @@ body {
 <script>
 const COLS=3, ROWS=2, TOTAL=COLS*ROWS;
 const WEDDING=new Date('2027-05-29T14:00:00');
-const SNAP_DIST=26;
+const AC=(window.AudioContext||window.webkitAudioContext)?new(window.AudioContext||window.webkitAudioContext)():null;
+function playPickup(){if(!AC)return;const o=AC.createOscillator(),g=AC.createGain();o.connect(g);g.connect(AC.destination);o.frequency.setValueAtTime(700,AC.currentTime);o.frequency.exponentialRampToValueAtTime(450,AC.currentTime+0.07);g.gain.setValueAtTime(0.10,AC.currentTime);g.gain.exponentialRampToValueAtTime(0.001,AC.currentTime+0.07);o.start();o.stop(AC.currentTime+0.07);}
+function playSnap(){if(!AC)return;const o=AC.createOscillator(),g=AC.createGain();o.connect(g);g.connect(AC.destination);o.type='sine';o.frequency.setValueAtTime(260,AC.currentTime);o.frequency.exponentialRampToValueAtTime(520,AC.currentTime+0.04);o.frequency.exponentialRampToValueAtTime(340,AC.currentTime+0.16);g.gain.setValueAtTime(0.20,AC.currentTime);g.gain.exponentialRampToValueAtTime(0.001,AC.currentTime+0.18);o.start();o.stop(AC.currentTime+0.18);}
+function playCelebrate(){
+  if(!AC) return;
+  // Ascending arpeggio: C5 -> E5 -> G5 -> C6
+  [{f:523.25,t:0},{f:659.25,t:0.11},{f:783.99,t:0.22},{f:1046.5,t:0.33}].forEach(({f,t})=>{
+    setTimeout(()=>{
+      const o=AC.createOscillator(),g=AC.createGain();
+      o.connect(g); g.connect(AC.destination);
+      o.type='sine'; o.frequency.value=f;
+      g.gain.setValueAtTime(0,AC.currentTime);
+      g.gain.linearRampToValueAtTime(0.14,AC.currentTime+0.02);
+      g.gain.exponentialRampToValueAtTime(0.001,AC.currentTime+0.55);
+      o.start(); o.stop(AC.currentTime+0.55);
+    },t*1000);
+  });
+}
+const SNAP_DIST=44;
 
 /* responsive board */
 function bsz(){
-  const maxW=Math.min(window.innerWidth-32,520);
+  const maxW=Math.min(window.innerWidth-20,660);
   const W=maxW, H=Math.round(W/1.777); // 16:9 ish to match image
   return {W,H,PW:Math.round(W/COLS),PH:Math.round(H/ROWS)};
 }
@@ -455,60 +475,66 @@ function makePieceCanvas(src,col,row,edges,PW,PH){
 }
 
 /*
-  Classic jigsaw knob on each edge.
-  The knob is a circle that bulges out from the midpoint of the edge.
-  Neck narrows before the circle — this is what gives the classic puzzle look.
+  Jigsaw knob path — pure cubic bezier, no arcs.
+  Each knob: narrow neck -> rounded head -> narrow neck back to edge.
+  dir>0 = protrudes in +axis direction, dir<0 = socket (concave).
 */
 function jigsawPath(ctx,x0,y0,W,H,top,right,bottom,left){
   const x1=x0+W, y1=y0+H;
-  const kR=Math.min(W,H)*0.13;  // knob circle radius
-  const nW=kR*0.55;              // neck half-width
-  const kD=kR*2.1;               // knob center distance from edge
+  const sz=Math.min(W,H);
+  const pH=sz*0.20;   // protrusion height
+  const hw=sz*0.155;  // knob head half-width
+  const nw=sz*0.055;  // neck half-width (waist)
+  const nb=sz*0.21;   // neck foot half-width
+
+  // Horizontal knob: traverses left->right along y=ey between x=xa..xb
+  // dir: -1=protrudes above ey, +1=protrudes below ey
+  function hKnob(xa,xb,ey,dir){
+    const mx=(xa+xb)/2, ty=ey+dir*pH, ext=dir*pH*0.38;
+    ctx.lineTo(mx-nb,ey);
+    ctx.bezierCurveTo(mx-nw,ey,           mx-nw,ey+dir*pH*0.5,   mx-hw,ty);
+    ctx.bezierCurveTo(mx-hw*0.25,ty+ext,  mx+hw*0.25,ty+ext,     mx+hw,ty);
+    ctx.bezierCurveTo(mx+nw,ey+dir*pH*0.5,mx+nw,ey,              mx+nb,ey);
+    ctx.lineTo(xb,ey);
+  }
+
+  // Vertical knob: traverses top->bottom along x=ex between y=ya..yb
+  // dir: +1=protrudes right of ex, -1=protrudes left of ex
+  function vKnob(ya,yb,ex,dir){
+    const my=(ya+yb)/2, tx=ex+dir*pH, ext=dir*pH*0.38;
+    ctx.lineTo(ex,my-nb);
+    ctx.bezierCurveTo(ex,my-nw,           ex+dir*pH*0.5,my-nw,   tx,my-hw);
+    ctx.bezierCurveTo(tx+ext,my-hw*0.25,  tx+ext,my+hw*0.25,     tx,my+hw);
+    ctx.bezierCurveTo(ex+dir*pH*0.5,my+nw,ex,my+nw,              ex,my+nb);
+    ctx.lineTo(ex,yb);
+  }
 
   ctx.beginPath();
   ctx.moveTo(x0,y0);
 
-  // TOP (left→right)
-  if(top===0){ ctx.lineTo(x1,y0); }
-  else {
-    const mx=(x0+x1)/2, d=-top*kD;
-    ctx.lineTo(mx-kR*1.1,y0);
-    ctx.bezierCurveTo(mx-nW,y0, mx-nW,y0+d-kR, mx,y0+d-kR);
-    ctx.arc(mx,y0+d, kR, -Math.PI/2+(top>0?0:Math.PI), Math.PI/2+(top>0?0:Math.PI), top>0);
-    ctx.bezierCurveTo(mx+nW,y0+d-kR, mx+nW,y0, mx+kR*1.1,y0);
-    ctx.lineTo(x1,y0);
-  }
+  // TOP left->right: top=+1 protrudes up (dir=-1), top=-1 socket (dir=+1)
+  if(!top) ctx.lineTo(x1,y0); else hKnob(x0,x1,y0,-top);
 
-  // RIGHT (top→bottom)
-  if(right===0){ ctx.lineTo(x1,y1); }
-  else {
-    const my=(y0+y1)/2, d=right*kD;
-    ctx.lineTo(x1,my-kR*1.1);
-    ctx.bezierCurveTo(x1,my-nW, x1+d-kR,my-nW, x1+d-kR,my);
-    ctx.arc(x1+d,my, kR, Math.PI+(right>0?0:Math.PI), 0+(right>0?0:Math.PI), right<0);
-    ctx.bezierCurveTo(x1+d-kR,my+nW, x1,my+nW, x1,my+kR*1.1);
-    ctx.lineTo(x1,y1);
-  }
+  // RIGHT top->bottom: right=+1 protrudes right (dir=+1)
+  if(!right) ctx.lineTo(x1,y1); else vKnob(y0,y1,x1,right);
 
-  // BOTTOM (right→left)
-  if(bottom===0){ ctx.lineTo(x0,y1); }
-  else {
-    const mx=(x0+x1)/2, d=bottom*kD;
-    ctx.lineTo(mx+kR*1.1,y1);
-    ctx.bezierCurveTo(mx+nW,y1, mx+nW,y1+d-kR, mx,y1+d-kR);
-    ctx.arc(mx,y1+d, kR, -Math.PI/2+(bottom>0?Math.PI:0), Math.PI/2+(bottom>0?Math.PI:0), bottom<0);
-    ctx.bezierCurveTo(mx-nW,y1+d-kR, mx-nW,y1, mx-kR*1.1,y1);
+  // BOTTOM right->left: bottom=+1 protrudes down (dir=+1)
+  if(!bottom){ ctx.lineTo(x0,y1); } else {
+    const mx=(x0+x1)/2, ty=y1+bottom*pH, ext=bottom*pH*0.38;
+    ctx.lineTo(mx+nb,y1);
+    ctx.bezierCurveTo(mx+nw,y1,            mx+nw,y1+bottom*pH*0.5,  mx+hw,ty);
+    ctx.bezierCurveTo(mx+hw*0.25,ty+ext,   mx-hw*0.25,ty+ext,       mx-hw,ty);
+    ctx.bezierCurveTo(mx-nw,y1+bottom*pH*0.5,mx-nw,y1,              mx-nb,y1);
     ctx.lineTo(x0,y1);
   }
 
-  // LEFT (bottom→top)
-  if(left===0){ ctx.lineTo(x0,y0); }
-  else {
-    const my=(y0+y1)/2, d=-left*kD;
-    ctx.lineTo(x0,my+kR*1.1);
-    ctx.bezierCurveTo(x0,my+nW, x0+d-kR,my+nW, x0+d-kR,my);
-    ctx.arc(x0+d,my, kR, 0+(left>0?Math.PI:0), Math.PI+(left>0?Math.PI:0), left>0);
-    ctx.bezierCurveTo(x0+d-kR,my-nW, x0,my-nW, x0,my-kR*1.1);
+  // LEFT bottom->top: left=+1 protrudes left (dir=-1 in x)
+  if(!left){ ctx.lineTo(x0,y0); } else {
+    const my=(y0+y1)/2, tx=x0-left*pH, ext=-left*pH*0.38;
+    ctx.lineTo(x0,my+nb);
+    ctx.bezierCurveTo(x0,my+nw,            x0-left*pH*0.5,my+nw,   tx,my+hw);
+    ctx.bezierCurveTo(tx+ext,my+hw*0.25,   tx+ext,my-hw*0.25,      tx,my-hw);
+    ctx.bezierCurveTo(x0-left*pH*0.5,my-nw,x0,my-nw,               x0,my-nb);
     ctx.lineTo(x0,y0);
   }
 
@@ -533,6 +559,7 @@ function initPuzzle(){
 
   for(let r=1;r<ROWS;r++){const l=document.createElement('div');l.className='grid-line grid-h';l.style.top=r*bs.PH+'px';board.appendChild(l);}
   for(let c=1;c<COLS;c++){const l=document.createElement('div');l.className='grid-line grid-v';l.style.left=c*bs.PW+'px';board.appendChild(l);}
+  for(let r=0;r<ROWS;r++) for(let c=0;c<COLS;c++){const g=document.createElement('div');g.className='slot-ghost';g.style.cssText=`left:${c*bs.PW}px;top:${r*bs.PH}px;width:${bs.PW}px;height:${bs.PH}px;`;g.dataset.col=c;g.dataset.row=r;board.appendChild(g);}
 
   const order=[];
   for(let r=0;r<ROWS;r++) for(let c=0;c<COLS;c++) order.push({col:c,row:r});
@@ -585,6 +612,7 @@ function startDrag(idx,clientX,clientY){
   drag={idx,ox,oy};
   p.el.classList.add('dragging');
   p.el.style.zIndex=500;
+  playPickup();
 }
 
 function moveDrag(clientX,clientY){
@@ -619,6 +647,8 @@ function endDrag(clientX,clientY){
     p.snapped=true;
     p.el.classList.add('snapped','snap-bounce');
     p.el.addEventListener('animationend',()=>p.el.classList.remove('snap-bounce'),{once:true});
+    playSnap();
+    markGhostFilled(p.col,p.row);
     snappedCount++;
     updateProgress();
     if(snappedCount===TOTAL) setTimeout(celebrate,500);
@@ -694,8 +724,13 @@ function updateProgress(){
   document.getElementById('progress-fill').style.width=pct+'%';
   document.getElementById('progress-count').textContent=snappedCount+' / '+TOTAL;
 }
+function markGhostFilled(col,row){
+  const g=document.querySelector(`.slot-ghost[data-col="${col}"][data-row="${row}"]`);
+  if(g) g.classList.add('filled');
+}
 
 function celebrate(){
+  playCelebrate();
   show('win-screen');
   const tc=document.getElementById('ticket-canvas');
   tc.width=TICKET_IMG.naturalWidth||1400;
