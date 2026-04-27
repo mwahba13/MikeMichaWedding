@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -14,30 +14,30 @@ body {
   min-height:100vh; display:flex; flex-direction:column; align-items:center; padding:2rem 1rem 3rem;
 }
 #puzzle-screen { gap:0.6rem; padding-top:1rem; }
-.screen { width:100%; max-width:680px; display:none; flex-direction:column; align-items:center; gap:1.5rem; }
+.screen { width:100%; max-width:900px; display:none; flex-direction:column; align-items:center; gap:1.5rem; }
 .screen.active { display:flex; animation:fadeUp .7s ease forwards; }
 @keyframes fadeUp { from{opacity:0;transform:translateY(12px)} to{opacity:1;transform:translateY(0)} }
 
 /* ENVELOPE */
 #env-screen { justify-content:center; min-height:85vh; text-align:center; gap:2rem; }
-.env-eyebrow { font-family:'Playfair Display',serif; font-size:13px; font-style:italic; letter-spacing:3px; color:var(--blush-light); text-transform:uppercase; opacity:.9; }
+.env-eyebrow { font-family:'Playfair Display',serif; font-size:15px; font-style:italic; letter-spacing:3px; color:var(--blush-light); text-transform:uppercase; opacity:.9; }
 .env-title { font-family:'Playfair Display',serif; font-size:clamp(30px,8vw,46px); font-weight:400; color:var(--ivory); line-height:1.2; }
 .env-title em { font-style:italic; color:var(--blush-light); }
-.env-sub { font-size:15px; color:rgba(249,245,240,.55); line-height:1.8; max-width:320px; }
-.open-btn { background:var(--blush); color:var(--navy); border:none; padding:16px 40px; font-family:'Playfair Display',serif; font-size:16px; font-style:italic; letter-spacing:1px; border-radius:3px; cursor:pointer; transition:background .2s,transform .15s; }
+.env-sub { font-size:15px; color:rgba(249,245,240,.75); line-height:1.8; max-width:320px; }
+.open-btn { background:var(--blush); color:var(--navy); border:none; padding:18px 48px; font-family:'Playfair Display',serif; font-size:18px; font-style:italic; letter-spacing:1px; border-radius:3px; cursor:pointer; transition:background .2s,transform .15s; }
 .open-btn:hover { background:var(--blush-light); transform:scale(1.02); }
 .open-btn:active { transform:scale(.98); }
 
 /* PUZZLE */
 .puzzle-header { text-align:center; margin-bottom:0; line-height:1.3; }
-.puzzle-eyebrow { font-family:'Playfair Display',serif; font-size:13px; font-style:italic; letter-spacing:3px; color:var(--blush-light); opacity:.85; text-transform:uppercase; margin-bottom:6px; }
-.puzzle-title { font-family:'Playfair Display',serif; font-size:clamp(20px,5vw,26px); font-weight:400; font-style:italic; color:var(--ivory); }
-.puzzle-hint { font-size:13px; color:rgba(196,184,168,.6); margin-top:3px; }
+.puzzle-eyebrow { font-family:'Playfair Display',serif; font-size:15px; font-style:italic; letter-spacing:3px; color:var(--blush-light); opacity:.95; text-transform:uppercase; margin-bottom:6px; }
+.puzzle-title { font-family:'Playfair Display',serif; font-size:clamp(22px,5.5vw,30px); font-weight:400; font-style:italic; color:var(--ivory); }
+.puzzle-hint { font-size:15px; color:rgba(249,245,240,.8); margin-top:3px; }
 
-.progress-wrap { width:100%; max-width:620px; display:flex; align-items:center; gap:12px; margin:0; }
+.progress-wrap { width:100%; max-width:860px; display:flex; align-items:center; gap:12px; margin:0; }
 .progress-track { flex:1; height:4px; background:rgba(232,180,184,.2); border-radius:3px; overflow:hidden; }
 .progress-fill { height:100%; width:0%; background:var(--blush); border-radius:3px; transition:width .4s cubic-bezier(.34,1.56,.64,1); }
-.progress-count { font-size:13px; color:var(--blush-light); opacity:.75; min-width:42px; text-align:right; font-family:'Playfair Display',serif; font-style:italic; }
+.progress-count { font-size:14px; color:var(--blush-light); opacity:.95; min-width:42px; text-align:right; font-family:'Playfair Display',serif; font-style:italic; }
 
 #board {
   position:relative;
@@ -58,24 +58,24 @@ body {
 .piece canvas { display:block; }
 .in-tray { transform-origin: top left; }
 
-#tray-wrap { width:100%; max-width:620px; margin-top:0; }
-.tray-label { font-size:12px; color:rgba(196,184,168,.45); font-style:italic; margin-bottom:6px; text-align:center; font-family:'Playfair Display',serif; }
-#tray { background:rgba(15,20,40,.6); border:1px solid rgba(232,180,184,.15); border-radius:4px; padding:14px 12px; display:flex; flex-wrap:wrap; gap:8px; justify-content:center; align-items:center; }
+#tray-wrap { width:100%; max-width:860px; margin-top:0; }
+.tray-label { font-size:14px; color:rgba(196,184,168,.8); font-style:italic; margin-bottom:6px; text-align:center; font-family:'Playfair Display',serif; }
+#tray { background:rgba(15,20,40,.6); border:1px solid rgba(232,180,184,.15); border-radius:4px; padding:16px 14px; display:flex; flex-wrap:wrap; gap:10px; justify-content:center; align-items:center; }
 
 /* WIN */
-.win-eyebrow { font-family:'Playfair Display',serif; font-size:16px; font-style:italic; letter-spacing:4px; color:var(--blush-light); text-transform:uppercase; text-align:center; opacity:.9; }
-.ornament { display:flex; align-items:center; gap:12px; color:rgba(232,180,184,.5); width:100%; max-width:620px; justify-content:center; font-size:16px; }
+.win-eyebrow { font-family:'Playfair Display',serif; font-size:18px; font-style:italic; letter-spacing:4px; color:var(--blush-light); text-transform:uppercase; text-align:center; opacity:.9; }
+.ornament { display:flex; align-items:center; gap:12px; color:rgba(232,180,184,.5); width:100%; max-width:860px; justify-content:center; font-size:16px; }
 .ornament-line { flex:1; height:1px; background:rgba(232,180,184,.2); }
 #ticket-canvas { width:100%; height:auto; display:block; border-radius:8px; box-shadow:0 20px 60px rgba(0,0,0,.7),0 0 0 1px rgba(201,168,76,.35); }
 
-#countdown { width:100%; max-width:620px; text-align:center; }
-.countdown-label { font-family:'Playfair Display',serif; font-size:15px; font-style:italic; color:rgba(196,184,168,.65); letter-spacing:2px; text-transform:uppercase; margin-bottom:16px; }
+#countdown { width:100%; max-width:860px; text-align:center; }
+.countdown-label { font-family:'Playfair Display',serif; font-size:17px; font-style:italic; color:rgba(196,184,168,.85); letter-spacing:2px; text-transform:uppercase; margin-bottom:16px; }
 .countdown-grid { display:flex; justify-content:center; gap:10px; }
 .countdown-unit { display:flex; flex-direction:column; align-items:center; gap:6px; }
-.countdown-num { font-family:'Playfair Display',serif; font-size:clamp(24px,7vw,42px); font-weight:600; color:var(--ivory); background:rgba(15,20,40,.75); border:1px solid rgba(201,168,76,.25); border-radius:4px; min-width:76px; height:76px; display:flex; align-items:center; justify-content:center; }
-.countdown-unit-label { font-size:13px; color:rgba(196,184,168,.5); letter-spacing:2px; text-transform:uppercase; font-family:'Playfair Display',serif; font-style:italic; }
+.countdown-num { font-family:'Playfair Display',serif; font-size:clamp(28px,7vw,52px); font-weight:600; color:var(--ivory); background:rgba(15,20,40,.75); border:1px solid rgba(201,168,76,.25); border-radius:4px; min-width:90px; height:90px; display:flex; align-items:center; justify-content:center; }
+.countdown-unit-label { font-size:14px; color:rgba(196,184,168,.8); letter-spacing:2px; text-transform:uppercase; font-family:'Playfair Display',serif; font-style:italic; }
 .countdown-sep { font-family:'Playfair Display',serif; font-size:34px; color:var(--blush); opacity:.4; align-self:center; margin-top:-14px; }
-.win-footer { text-align:center; color:rgba(196,184,168,.7); font-size:17px; font-style:italic; line-height:2; font-family:'Playfair Display',serif; }
+.win-footer { text-align:center; color:rgba(196,184,168,.9); font-size:19px; font-style:italic; line-height:2; font-family:'Playfair Display',serif; }
 .replay-btn { background:none; border:1px solid rgba(232,180,184,.3); color:rgba(196,184,168,.55); padding:12px 28px; font-size:15px; font-family:'Playfair Display',serif; font-style:italic; border-radius:3px; cursor:pointer; transition:all .2s; }
 .replay-btn:hover { border-color:var(--blush); color:var(--blush-light); }
 
@@ -86,7 +86,7 @@ body {
 /* ── DETAILS SECTION ── */
 #details-section {
   width:100%;
-  max-width:620px;
+  max-width:860px;
   display:flex;
   flex-direction:column;
   align-items:center;
@@ -102,7 +102,7 @@ body {
 
 .details-message {
   text-align:center;
-  max-width:420px;
+  max-width:600px;
 }
 .details-message-title {
   font-family:'Playfair Display',serif;
@@ -114,8 +114,8 @@ body {
   line-height:1.3;
 }
 .details-message-body {
-  font-size:16px;
-  color:rgba(196,184,168,.7);
+  font-size:17px;
+  color:rgba(196,184,168,.9);
   line-height:1.9;
   font-family:'Libre Baskerville',serif;
 }
@@ -136,7 +136,7 @@ body {
 }
 
 .photo-slot {
-  aspect-ratio:4/3;
+  aspect-ratio:1/1;
   background:rgba(15,20,40,.6);
   border:1px dashed rgba(232,180,184,.2);
   border-radius:6px;
@@ -192,24 +192,24 @@ body {
 }
 .details-card-eyebrow {
   font-family:'Playfair Display',serif;
-  font-size:11px;
+  font-size:13px;
   font-style:italic;
   letter-spacing:2px;
   text-transform:uppercase;
   color:var(--blush-light);
-  opacity:.7;
+  opacity:.9;
   margin-bottom:8px;
 }
 .details-card-title {
   font-family:'Playfair Display',serif;
-  font-size:16px;
+  font-size:18px;
   font-weight:600;
   color:var(--ivory);
   margin-bottom:5px;
 }
 .details-card-body {
-  font-size:13px;
-  color:rgba(196,184,168,.6);
+  font-size:15px;
+  color:rgba(196,184,168,.85);
   line-height:1.6;
   font-family:'Libre Baskerville',serif;
 }
@@ -222,7 +222,7 @@ body {
   font-family:'Playfair Display',serif;
   font-size:clamp(18px,4vw,24px);
   font-style:italic;
-  color:rgba(196,184,168,.55);
+  color:rgba(196,184,168,.85);
   line-height:1.6;
 }
 .details-closing-names {
@@ -238,6 +238,15 @@ body {
 .snap-bounce { animation:snapBounce .38s cubic-bezier(.36,1.56,.64,1) forwards; }
 .slot-ghost { position:absolute; border:1px dashed rgba(232,180,184,.18); border-radius:2px; pointer-events:none; z-index:1; transition:opacity .3s; }
 .slot-ghost.filled { opacity:0; }
+@keyframes photoReveal { from{opacity:0;transform:scale(.97)} to{opacity:1;transform:scale(1)} }
+.photo-slot img { animation:photoReveal .6s ease forwards; opacity:0; }
+.photo-slot:nth-child(1) img { animation-delay:.1s; }
+.photo-slot:nth-child(2) img { animation-delay:.25s; }
+.photo-slot:nth-child(3) img { animation-delay:.4s; }
+.photo-slot:nth-child(4) img { animation-delay:.55s; }
+@keyframes nudgeDown { 0%,100%{transform:translateY(0);opacity:.5} 50%{transform:translateY(5px);opacity:1} }
+.tray-arrow { text-align:center; color:var(--blush-light); font-size:20px; animation:nudgeDown 1.8s ease-in-out 1.5s 4; pointer-events:none; transition:opacity .3s; }
+.tray-arrow.hidden { opacity:0; }
 </style>
 </head>
 <body>
@@ -257,9 +266,9 @@ body {
 
 <div id="puzzle-screen" class="screen">
   <div class="puzzle-header">
-    <div class="puzzle-eyebrow">A message for you</div>
-    <div class="puzzle-title">Put the pieces together</div>
-    <div class="puzzle-hint">Drag pieces onto the board — green glow means locked in correctly</div>
+    <div class="puzzle-eyebrow">Save the Date</div>
+    <div class="puzzle-title">Assemble the puzzle to reveal our news!</div>
+    <div class="puzzle-hint">Drag each piece from the tray onto the board — snap all 6 to unlock the announcement</div>
   </div>
   <div class="progress-wrap">
     <div class="progress-track"><div class="progress-fill" id="progress-fill"></div></div>
@@ -268,7 +277,8 @@ body {
   <div id="board"></div>
   <button class="auto-btn" id="auto-btn">Auto solve ✦</button>
   <div id="tray-wrap">
-    <div class="tray-label">Pieces remaining</div>
+    <div class="tray-label">Pieces — drag onto the board above</div>
+    <div class="tray-arrow" id="tray-arrow">↑ drag up to place ↑</div>
     <div id="tray"></div>
   </div>
 </div>
@@ -291,6 +301,11 @@ body {
     </div>
   </div>
   <div class="win-footer">Michaella Atienza &amp; Michael Wahba<br>May 29, 2027 · Calgary Zoo<br><em>Formal invitation to follow</em></div>
+        <div class="details-card">
+        <div class="details-card-eyebrow">Date</div>
+        <div class="details-card-title">May 29, 2027</div>
+        <div class="details-card-body">Saturday<br>Calgary, Alberta</div>
+      </div>
   <button class="replay-btn" id="replay-btn">Solve it again ›</button>
 
   <!-- DETAILS SECTION -->
@@ -312,54 +327,13 @@ body {
       </div>
     </div>
 
-    <!-- Photo grid — 4 slots -->
+    <!-- Photo gallery -->
+    <div class="details-message-title" style="font-size:clamp(18px,4vw,24px);margin-bottom:0">A few of our favourite moments</div>
     <div class="photo-grid">
-      <div class="photo-slot">
-        <div class="photo-slot-icon">◻</div>
-        <div class="photo-slot-label">Photo one</div>
-      </div>
-      <div class="photo-slot">
-        <div class="photo-slot-icon">◻</div>
-        <div class="photo-slot-label">Photo two</div>
-      </div>
-      <div class="photo-slot">
-        <div class="photo-slot-icon">◻</div>
-        <div class="photo-slot-label">Photo three</div>
-      </div>
-      <div class="photo-slot">
-        <div class="photo-slot-icon">◻</div>
-        <div class="photo-slot-label">Photo four</div>
-      </div>
-    </div>
-
-    <div class="details-divider">
-      <div class="details-divider-line"></div>
-      <span>✦</span>
-      <div class="details-divider-line"></div>
-    </div>
-
-    <!-- Event details cards -->
-    <div class="details-cards">
-      <div class="details-card">
-        <div class="details-card-eyebrow">Ceremony</div>
-        <div class="details-card-title">St. Mina Church</div>
-        <div class="details-card-body">292120 Wagon Wheel Blvd<br>Calgary, AB</div>
-      </div>
-      <div class="details-card">
-        <div class="details-card-eyebrow">Reception</div>
-        <div class="details-card-title">Calgary Zoo</div>
-        <div class="details-card-body">Enmax Conservatory<br>1300 Zoo Rd NE</div>
-      </div>
-      <div class="details-card">
-        <div class="details-card-eyebrow">Date</div>
-        <div class="details-card-title">May 29, 2027</div>
-        <div class="details-card-body">Saturday<br>Calgary, Alberta</div>
-      </div>
-      <div class="details-card">
-        <div class="details-card-eyebrow">Dress code</div>
-        <div class="details-card-title">Formal</div>
-        <div class="details-card-body">Formal invitation<br>to follow</div>
-      </div>
+      <div class="photo-slot"><img src="images/endGallery/1.jpg" alt="Michaella &amp; Michael"></div>
+      <div class="photo-slot"><img src="images/endGallery/2.jpg" alt="Michaella &amp; Michael"></div>
+      <div class="photo-slot"><img src="images/endGallery/4.jpg" alt="Michaella &amp; Michael"></div>
+      <div class="photo-slot"><img src="images/endGallery/5.jpg" alt="Michaella &amp; Michael"></div>
     </div>
 
     <div class="details-divider">
@@ -382,7 +356,7 @@ const COLS=3, ROWS=2, TOTAL=COLS*ROWS;
 const WEDDING=new Date('2027-05-29T14:00:00');
 const AC=(window.AudioContext||window.webkitAudioContext)?new(window.AudioContext||window.webkitAudioContext)():null;
 function playPickup(){if(!AC)return;const o=AC.createOscillator(),g=AC.createGain();o.connect(g);g.connect(AC.destination);o.frequency.setValueAtTime(700,AC.currentTime);o.frequency.exponentialRampToValueAtTime(450,AC.currentTime+0.07);g.gain.setValueAtTime(0.10,AC.currentTime);g.gain.exponentialRampToValueAtTime(0.001,AC.currentTime+0.07);o.start();o.stop(AC.currentTime+0.07);}
-function playSnap(){if(!AC)return;const o=AC.createOscillator(),g=AC.createGain();o.connect(g);g.connect(AC.destination);o.type='sine';o.frequency.setValueAtTime(260,AC.currentTime);o.frequency.exponentialRampToValueAtTime(520,AC.currentTime+0.04);o.frequency.exponentialRampToValueAtTime(340,AC.currentTime+0.16);g.gain.setValueAtTime(0.20,AC.currentTime);g.gain.exponentialRampToValueAtTime(0.001,AC.currentTime+0.18);o.start();o.stop(AC.currentTime+0.18);}
+function playSnap(){if(!AC)return;[[260,1.0],[310,0.55]].forEach(([f,vol])=>{const o=AC.createOscillator(),g=AC.createGain();o.connect(g);g.connect(AC.destination);o.type='sine';o.frequency.setValueAtTime(f,AC.currentTime);o.frequency.exponentialRampToValueAtTime(f*2,AC.currentTime+0.05);o.frequency.exponentialRampToValueAtTime(f*1.3,AC.currentTime+0.22);g.gain.setValueAtTime(0.25*vol,AC.currentTime);g.gain.exponentialRampToValueAtTime(0.001,AC.currentTime+0.26);o.start();o.stop(AC.currentTime+0.26);});}
 function playCelebrate(){
   if(!AC) return;
   // Ascending arpeggio: C5 -> E5 -> G5 -> C6
@@ -398,11 +372,11 @@ function playCelebrate(){
     },t*1000);
   });
 }
-const SNAP_DIST=44;
+const SNAP_DIST=80;
 
 /* responsive board */
 function bsz(){
-  const maxW=Math.min(window.innerWidth-20,660);
+  const maxW=Math.min(window.innerWidth-32,860);
   const W=maxW, H=Math.round(W/1.777); // 16:9 ish to match image
   return {W,H,PW:Math.round(W/COLS),PH:Math.round(H/ROWS)};
 }
@@ -456,7 +430,7 @@ function makePieceCanvas(src,col,row,edges,PW,PH){
   ctx.save();
   jigsawPath(ctx,T,T,PW,PH,topE,rightE,bottomE,leftE);
   ctx.clip();
-  ctx.drawImage(src,col*PW,row*PH,PW,PH,T,T,PW,PH);
+  ctx.drawImage(src,col*PW-T,row*PH-T,TW,TH,0,0,TW,TH);
   ctx.restore();
 
   // Stroke outline
@@ -585,6 +559,8 @@ function shuffle(a){for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random
 function boardEl(){ return document.getElementById('board'); }
 
 function startDrag(idx,clientX,clientY){
+  const arrow=document.getElementById('tray-arrow');
+  if(arrow) arrow.classList.add('hidden');
   const p=pieces[idx];
   const board=boardEl();
   const br=board.getBoundingClientRect();
@@ -668,10 +644,10 @@ function returnToTray(idx){
 }
 
 function getTrayScale(){
-  // Target: 3 pieces per row, fitting within tray width minus padding and gaps
+  // Target: 2 pieces per row — bigger, easier to grab
   const trayEl=document.getElementById('tray');
   const trayW=trayEl ? trayEl.clientWidth : 440;
-  const available=(trayW - 24 - 2*6) / 3; // padding 10px each side, 2 gaps of 6px, 3 cols
+  const available=(trayW - 24 - 1*10) / 4; // padding 12px each side, 1 gap of 10px, 2 cols
   return Math.min(1, available / (bs ? bs.PW + 2*Math.round(Math.min(bs.PW,bs.PH)*0.28) : 160));
 }
 
