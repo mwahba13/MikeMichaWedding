@@ -79,8 +79,8 @@ body {
 .replay-btn { background:none; border:1px solid rgba(232,180,184,.3); color:rgba(196,184,168,.55); padding:12px 28px; font-size:15px; font-family:'Playfair Display',serif; font-style:italic; border-radius:3px; cursor:pointer; transition:all .2s; }
 .replay-btn:hover { border-color:var(--blush); color:var(--blush-light); }
 
-.auto-btn { background:none; border:1px solid rgba(232,180,184,.3); color:rgba(196,184,168,.55); padding:8px 28px; font-size:13px; font-family:"Playfair Display",serif; font-style:italic; border-radius:3px; cursor:pointer; transition:all .2s; align-self:center; }
-.auto-btn:hover { border-color:var(--blush); color:var(--blush-light); }
+.auto-btn { background:rgba(232,180,184,.1); border:1px solid rgba(232,180,184,.55); color:rgba(232,180,184,.9); padding:10px 32px; font-size:14px; font-family:"Playfair Display",serif; font-style:italic; border-radius:3px; cursor:pointer; transition:all .2s; align-self:center; letter-spacing:.5px; }
+.auto-btn:hover { background:rgba(232,180,184,.2); border-color:var(--blush); color:var(--blush-light); }
 .auto-btn:disabled { opacity:.3; cursor:default; }
 
 /* ── DETAILS SECTION ── */
@@ -247,6 +247,16 @@ body {
 @keyframes nudgeDown { 0%,100%{transform:translateY(0);opacity:.5} 50%{transform:translateY(5px);opacity:1} }
 .tray-arrow { text-align:center; color:var(--blush-light); font-size:20px; animation:nudgeDown 1.8s ease-in-out 1.5s 4; pointer-events:none; transition:opacity .3s; }
 .tray-arrow.hidden { opacity:0; }
+
+/* ADD TO CALENDAR */
+.cal-wrap { position:relative; display:inline-block; }
+.cal-btn { background:rgba(201,168,76,.15); border:1px solid rgba(201,168,76,.55); color:var(--gold-light); padding:14px 36px; font-size:16px; font-family:'Playfair Display',serif; font-style:italic; letter-spacing:.5px; border-radius:3px; cursor:pointer; transition:all .2s; }
+.cal-btn:hover { background:rgba(201,168,76,.28); border-color:var(--gold); }
+.cal-dropdown { position:absolute; bottom:calc(100% + 8px); left:50%; transform:translateX(-50%); background:#1a2842; border:1px solid rgba(201,168,76,.3); border-radius:4px; overflow:hidden; display:none; min-width:200px; z-index:100; box-shadow:0 8px 24px rgba(0,0,0,.6); }
+.cal-dropdown.open { display:block; animation:fadeUp .18s ease forwards; }
+.cal-option { display:block; width:100%; padding:13px 22px; text-align:center; font-family:'Playfair Display',serif; font-size:15px; color:rgba(196,184,168,.9); background:none; border:none; cursor:pointer; transition:background .15s,color .15s; text-decoration:none; }
+.cal-option:hover { background:rgba(201,168,76,.18); color:var(--gold-light); }
+.cal-option + .cal-option { border-top:1px solid rgba(232,180,184,.1); }
 </style>
 </head>
 <body>
@@ -306,6 +316,14 @@ body {
         <div class="details-card-title">May 29, 2027</div>
         <div class="details-card-body">Saturday<br>Calgary, Alberta</div>
       </div>
+  <div class="cal-wrap">
+    <button class="cal-btn" id="cal-btn">Add to Calendar ✦</button>
+    <div class="cal-dropdown" id="cal-dropdown">
+      <a class="cal-option" id="cal-google" href="#" target="_blank" rel="noopener">Google Calendar</a>
+      <a class="cal-option" id="cal-outlook" href="#" target="_blank" rel="noopener">Outlook</a>
+      <a class="cal-option" id="cal-ical" href="#">iCal / Apple</a>
+    </div>
+  </div>
   <button class="replay-btn" id="replay-btn">Solve it again ›</button>
 
   <!-- DETAILS SECTION -->
@@ -792,6 +810,43 @@ document.getElementById('open-btn').addEventListener('click',()=>{
 });
 document.getElementById('replay-btn').addEventListener('click',()=>{show('puzzle-screen');initPuzzle();});
 document.getElementById('auto-btn').addEventListener('click',autoSolve);
+
+// Add to Calendar
+(function(){
+  const title=encodeURIComponent("Michaella & Michael's Wedding");
+  const loc=encodeURIComponent("Calgary, Alberta");
+  const desc=encodeURIComponent("Save the Date! Formal invitation to follow.");
+  const startDT="20270529", endDT="20270530";
+  const startISO="2027-05-29", endISO="2027-05-30";
+
+  document.getElementById('cal-google').href=
+    `https://calendar.google.com/calendar/r/eventedit?text=${title}&dates=${startDT}/${endDT}&location=${loc}&details=${desc}`;
+  document.getElementById('cal-outlook').href=
+    `https://outlook.live.com/calendar/0/action/compose?subject=${title}&startdt=${startISO}&enddt=${endISO}&location=${loc}&body=${desc}&allday=true`;
+
+  document.getElementById('cal-ical').addEventListener('click',function(e){
+    e.preventDefault();
+    const ics=[
+      'BEGIN:VCALENDAR','VERSION:2.0','PRODID:-//MikeMichaWedding//EN',
+      'BEGIN:VEVENT',
+      'DTSTART;VALUE=DATE:'+startDT,'DTEND;VALUE=DATE:'+endDT,
+      "SUMMARY:Michaella & Michael's Wedding",
+      'LOCATION:Calgary, Alberta',
+      'DESCRIPTION:Save the Date! Formal invitation to follow.',
+      'END:VEVENT','END:VCALENDAR'
+    ].join('\r\n');
+    const url=URL.createObjectURL(new Blob([ics],{type:'text/calendar'}));
+    Object.assign(document.createElement('a'),{href:url,download:'micha-michael-wedding.ics'}).click();
+    URL.revokeObjectURL(url);
+  });
+
+  document.getElementById('cal-btn').addEventListener('click',function(){
+    document.getElementById('cal-dropdown').classList.toggle('open');
+  });
+  document.addEventListener('click',function(e){
+    if(!e.target.closest('.cal-wrap')) document.getElementById('cal-dropdown').classList.remove('open');
+  });
+})();
 </script>
 </body>
 </html>
