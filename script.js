@@ -65,6 +65,9 @@ const fadeSections = [
   '.tl-item',
   '.travel-card',
   '.venue-text',
+  '#faq h2',
+  '.faq-list',
+  '.rsvp-cta-inner',
   '#rsvp h2',
   '.rsvp-sub',
   '.rsvp-form-wrap',
@@ -95,7 +98,8 @@ document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
 const form    = document.getElementById('rsvp-form');
 const success = document.getElementById('rsvp-success');
 
-form.addEventListener('submit', function (e) {
+// The form only exists on pages that embed it; skip the handler elsewhere.
+if (form) form.addEventListener('submit', function (e) {
   e.preventDefault();
 
   const fname     = document.getElementById('fname').value.trim();

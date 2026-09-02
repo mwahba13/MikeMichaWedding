@@ -607,6 +607,90 @@ p:last-child { margin-bottom: 0; }
 .fade-in { opacity: 0; transform: translateY(28px); transition: opacity 0.7s ease, transform 0.7s ease; }
 .fade-in.visible { opacity: 1; transform: none; }
 
+/* ── FAQ ──────────────────────────────────────────────────── */
+#faq { background: var(--cream-dark); }
+.faq-list {
+  max-width: 760px;
+  margin: 48px auto 0;
+}
+.faq-item {
+  background: var(--white);
+  border: 1px solid rgba(26,39,68,0.08);
+  border-radius: var(--radius);
+  margin-bottom: 12px;
+  overflow: hidden;
+}
+.faq-item summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  cursor: pointer;
+  list-style: none;
+  padding: 22px 26px;
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  color: var(--navy);
+  line-height: 1.3;
+  transition: background var(--transition);
+}
+.faq-item summary::-webkit-details-marker { display: none; }
+.faq-item summary:hover { background: var(--cream); }
+.faq-item summary::after {
+  content: '';
+  flex-shrink: 0;
+  width: 9px;
+  height: 9px;
+  border-right: 1.5px solid var(--blush-deep);
+  border-bottom: 1.5px solid var(--blush-deep);
+  transform: rotate(45deg) translate(-2px, -2px);
+  transition: transform var(--transition);
+}
+.faq-item[open] summary::after { transform: rotate(-135deg) translate(-2px, -2px); }
+.faq-item[open] summary { background: var(--cream); }
+.faq-answer {
+  padding: 0 26px 24px;
+  font-size: 0.98rem;
+  line-height: 1.8;
+  color: var(--text-light);
+}
+.faq-answer a {
+  color: var(--gold);
+  border-bottom: 1px solid rgba(139,99,53,0.35);
+  transition: border-color var(--transition);
+}
+.faq-answer a:hover { border-bottom-color: var(--gold); }
+.faq-footnote {
+  text-align: center;
+  margin-top: 40px;
+  font-size: 0.92rem;
+  color: var(--text-light);
+  font-style: italic;
+}
+
+/* ── RSVP CTA ─────────────────────────────────────────────── */
+#rsvp-cta {
+  background: var(--navy);
+  padding: 88px 24px;
+  text-align: center;
+}
+.rsvp-cta-inner { max-width: 560px; margin: 0 auto; }
+.rsvp-cta-inner h2 { color: var(--white); margin-bottom: 16px; }
+.rsvp-cta-text {
+  color: rgba(255,255,255,0.75);
+  font-size: 1rem;
+  line-height: 1.8;
+  margin-bottom: 12px;
+}
+.rsvp-cta-deadline {
+  margin-top: 24px;
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--blush);
+}
+
 /* ── RESPONSIVE ───────────────────────────────────────────── */
 @media (max-width: 900px) {
   .nav-links { display: none; }
@@ -633,6 +717,9 @@ p:last-child { margin-bottom: 0; }
 
   .form-row { grid-template-columns: 1fr; }
   .rsvp-form-wrap { padding: 28px 20px; }
+
+  .faq-item summary { padding: 18px 20px; font-size: 1.1rem; }
+  .faq-answer { padding: 0 20px 20px; }
 }
 
 @media (max-width: 560px) {
