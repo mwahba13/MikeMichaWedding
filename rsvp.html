@@ -3,205 +3,68 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>RSVP — Micha & Michael</title>
+  <title>RSVP — Micha &amp; Michael</title>
+  <meta http-equiv="refresh" content="0; url=https://www.zola.com/wedding/michaellaandmichael2027/rsvp" />
+  <link rel="canonical" href="https://www.zola.com/wedding/michaellaandmichael2027/rsvp" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
   <style>
-    /* ── RSVP HERO ── */
-    #rsvp-hero {
-      position: relative;
-      height: 42vh;
-      min-height: 320px;
+    #rsvp-redirect {
+      min-height: 100vh;
       display: flex;
       align-items: center;
       justify-content: center;
-      overflow: hidden;
-      background: var(--navy-deep);
-    }
-    .rsvp-hero-overlay {
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(to bottom, rgba(15,26,48,0.6) 0%, rgba(15,26,48,0.75) 100%);
-    }
-    .rsvp-hero-content {
-      position: relative;
-      z-index: 2;
       text-align: center;
-      color: var(--white);
-    }
-    .rsvp-hero-content .eyebrow { color: var(--blush); margin-bottom: 12px; }
-    .rsvp-hero-content h1 {
-      font-family: var(--font-display);
-      font-size: clamp(2.5rem, 7vw, 4.5rem);
-      font-weight: 400;
-      color: var(--white);
-      line-height: 1.1;
-    }
-    .rsvp-hero-content p {
-      margin-top: 16px;
-      font-size: 1rem;
-      color: rgba(255,255,255,0.75);
-      letter-spacing: 0.05em;
-    }
-
-    /* ── RSVP BODY ── */
-    #rsvp-section {
+      padding: 40px 24px;
       background: var(--cream);
-      padding: 80px 24px 120px;
     }
-    .rsvp-inner {
-      max-width: 800px;
-      margin: 0 auto;
-    }
-    .rsvp-intro {
-      text-align: center;
-      margin-bottom: 52px;
-    }
-    .rsvp-intro h2 {
+    .redirect-inner { max-width: 520px; }
+    .redirect-inner h1 {
+      font-family: var(--font-display);
+      font-size: clamp(2rem, 5vw, 3rem);
+      font-weight: 400;
+      color: var(--navy);
       margin-bottom: 16px;
     }
-    .rsvp-intro p {
+    .redirect-inner p {
       color: var(--text-light);
-      max-width: 520px;
-      margin: 0 auto;
       font-size: 1rem;
       line-height: 1.8;
+      margin-bottom: 28px;
     }
-    .rsvp-deadline {
+    .redirect-inner .eyebrow { color: var(--gold); margin-bottom: 12px; }
+    .redirect-link {
       display: inline-block;
-      margin-top: 20px;
-      font-size: 0.75rem;
+      padding: 14px 34px;
+      border: 1px solid var(--navy);
+      border-radius: var(--radius);
+      font-family: var(--font-body);
+      font-size: 0.8rem;
       font-weight: 500;
       letter-spacing: 0.18em;
       text-transform: uppercase;
-      color: var(--gold);
-    }
-
-    /* ── JOTFORM EMBED ── */
-    .jotform-wrap {
-      background: var(--white);
-      border: 1px solid var(--cream-dark);
-      border-radius: var(--radius);
-      overflow: hidden;
-      box-shadow: 0 4px 32px rgba(0,0,0,0.06);
-    }
-    .jotform-wrap iframe {
-      display: block;
-      width: 100%;
-      min-height: 700px;
-      border: none;
-    }
-
-    /* placeholder shown until a real form URL is added */
-    .jotform-placeholder {
-      padding: 80px 40px;
-      text-align: center;
-      background: var(--cream-dark);
-      border: 2px dashed var(--blush-deep);
-      border-radius: var(--radius);
-      color: var(--text-light);
-    }
-    .jotform-placeholder .ph-icon { font-size: 2.5rem; margin-bottom: 16px; }
-    .jotform-placeholder h3 {
-      font-family: var(--font-display);
-      font-size: 1.4rem;
       color: var(--navy);
-      margin-bottom: 12px;
+      text-decoration: none;
+      transition: background 0.25s ease, color 0.25s ease;
     }
-    .jotform-placeholder p {
-      font-size: 0.95rem;
-      line-height: 1.7;
-      max-width: 440px;
-      margin: 0 auto 24px;
-    }
-    .jotform-placeholder code {
-      display: inline-block;
-      background: rgba(26,39,68,0.07);
-      border-radius: 3px;
-      padding: 2px 8px;
-      font-size: 0.85rem;
-      color: var(--navy);
-    }
+    .redirect-link:hover { background: var(--navy); color: var(--white); }
   </style>
+  <script>
+    window.location.replace('https://www.zola.com/wedding/michaellaandmichael2027/rsvp');
+  </script>
 </head>
 <body>
 
-  <!-- NAV -->
-  <nav id="nav">
-    <div class="nav-inner">
-      <a href="index.html" class="nav-monogram">M & M</a>
-      <ul class="nav-links">
-        <li><a href="index.html#story">Our Story</a></li>
-        <li><a href="index.html#schedule">Schedule</a></li>
-        <li><a href="index.html#venue">Venue</a></li>
-        <li><a href="rsvp.html">RSVP</a></li>
-      </ul>
-      <button class="nav-toggle" aria-label="Open menu">&#9776;</button>
-    </div>
-  </nav>
-
-  <!-- MOBILE MENU -->
-  <div id="mobile-menu" class="mobile-menu">
-    <button class="mobile-close" aria-label="Close menu">&#10005;</button>
-    <ul>
-      <li><a href="index.html#story">Our Story</a></li>
-      <li><a href="index.html#schedule">Schedule</a></li>
-      <li><a href="index.html#venue">Venue</a></li>
-      <li><a href="rsvp.html">RSVP</a></li>
-    </ul>
-  </div>
-
-  <!-- HERO -->
-  <section id="rsvp-hero">
-    <div class="rsvp-hero-overlay"></div>
-    <div class="rsvp-hero-content">
-      <p class="eyebrow">Micha & Michael · May 29, 2027</p>
-      <h1>RSVP</h1>
-      <p>We hope you can join us</p>
+  <section id="rsvp-redirect">
+    <div class="redirect-inner">
+      <p class="eyebrow">Micha &amp; Michael · May 29, 2027</p>
+      <h1>Taking you to our RSVP</h1>
+      <p>You're being redirected to our Zola page. If nothing happens, use the link below.</p>
+      <a class="redirect-link" href="https://www.zola.com/wedding/michaellaandmichael2027/rsvp">RSVP on Zola</a>
     </div>
   </section>
 
-  <!-- RSVP FORM -->
-  <section id="rsvp-section">
-    <div class="rsvp-inner">
-      <div class="rsvp-intro">
-        <p class="eyebrow center">Kindly reply by</p>
-        <h2 class="center">Will you be there?</h2>
-        <p>Please let us know if you'll be joining us for our special day. Fill out the form below and we'll take care of the rest.</p>
-        <span class="rsvp-deadline">Please respond by April 1, 2027</span>
-      </div>
-
-      <!--
-        TO EMBED YOUR JOTFORM:
-        Replace the .jotform-placeholder div below with your Jotform embed code.
-        In Jotform: Publish → Embed → iFrame, then paste the <iframe> tag here.
-
-        Example:
-        <div class="jotform-wrap">
-          <iframe src="https://form.jotform.com/YOUR_FORM_ID" ...></iframe>
-        </div>
-      -->
-      <div class="jotform-placeholder">
-        <div class="ph-icon">📋</div>
-        <h3>Form coming soon</h3>
-        <p>The RSVP form will appear here once it's ready. Replace this block with the Jotform embed code from your form's <strong>Publish → Embed</strong> settings.</p>
-        <p>Look for the <code>&lt;iframe&gt;</code> embed option and paste it inside a <code>.jotform-wrap</code> div.</p>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- FOOTER -->
-  <footer id="footer">
-    <div class="footer-inner">
-      <p class="footer-names">Micha &amp; Michael</p>
-      <p class="footer-date">May 29, 2027 · St. Mina Coptic Orthodox Church · Calgary, Alberta</p>
-      <p class="footer-love">Made with love ♡</p>
-    </div>
-  </footer>
-
-  <script src="script.js"></script>
 </body>
 </html>
